@@ -1,0 +1,1 @@
+ATTRS{name}=="Cherry GmbH CHERRY Corded Device", SYMLINK+="cherrystream"
