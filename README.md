@@ -3,17 +3,14 @@
 
 The files are as follow
 
-`*.kbd`
+- `*.kbd`
+  - Layouts and layer definitions for keyboard
 
-Layouts and layer definitions for keyboard
+- `systemd/`
+  - Service to start in order to attach KMonad always on launch
 
-`systemd/`
-
-Service to start in order to attach KMonad always on launch
-
-`udev/`
-
-Rules to catch exact attribute name in order to expose to `/dev/` which can be used to catch in the rule
+- `udev/`
+  - Rules to catch exact attribute name in order to expose to `/dev/` which can be used to catch in the rule
 
 ## Getting started
 
