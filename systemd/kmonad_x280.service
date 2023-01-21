@@ -2,7 +2,7 @@
 Description=KMonad for x280
 
 [Service]
-ExecStart=/usr/bin/kmonad /home/kris/.config/kmonad/kmonad_x280.kbd
+ExecStart=/usr/bin/kmonad /home/kris/.config/kmonad/x280.kbd
 Restart=always
 RestartSec=5
 StandardOutput=null
