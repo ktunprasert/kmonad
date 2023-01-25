@@ -8,4 +8,4 @@ RestartSec=5
 StandardOutput=null
 
 [Install]
-WantedBy=sway-session.target
+WantedBy=multi-user.target

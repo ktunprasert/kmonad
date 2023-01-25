@@ -13,4 +13,4 @@ StandardOutput=null
 PathExists=/dev/%i
 
 [Install]
-WantedBy=sway-session.target
+WantedBy=multi-user.target
