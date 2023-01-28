@@ -35,4 +35,38 @@ The files are as follow
   - Start the service `systemctl start kmonad@cherrystream`
   - Persist the service on every login/logout `systemctl enable kmonad@cherrystream`
 
+## The configuration
+
+The main changes for the layout are as follows
+- Tab on press becomes tab as expected but on hold it modifies your right home rows to have arrows (i,j,k,l) becomes (up, left, down, right)
+  - This behaviour exists out of the inconvenience of having to move your fingers outside the home rows when trying to do arrows based movements
+  - On keyboards lower than 75% with no function keys (like the Sofle) I would also add the functionality for this layer to include TabHold + Number key to become function keys
+    - Tab+1 = F1
+    - Tab+2 = F2
+    - ...
+    - Tab+10 = F10
+    - Tab+Minus = F11
+    - Tab+Equals = F12
+
+- CapsLock is Enter on press then CTRL on hold
+  - I personally have no requirement for the CapsLock key and have been using it as the Enter key for a good few years now, the CTRL part only came after I discovered Split Keyboards and QMK + Via configurations
+  - The CTRL key on most keyboards are actually quite far to reach and have caused me discomfort a few times therefore having the option to press it right where my pinkie rests is quite comfy
+- Space is Space on tap but symbols layer on hold
+  - This came out of the necessity for not having enough symbols on the Sofle board though I have grown to enjoy the multi function usage for the spacebar. By simply adding a tap hold functionality I can access my parentheses, brackets, braces and most shift number symbols with ease.
+    - Space+1 = !
+    - Space+5 = %
+    - etc...
+  - There's also the modification to homerows where I put my common programming symbols there
+    - Space+J = (
+    - Space+K = )
+    - Space+U = [
+    - Space+I = ]
+    - Space+M = {
+    - Space+, = }
+  - Finally there are macros for common shortcuts such as Ctrl + [A,Z,X,C,V]
+    - Space+A
+    - Space+Z
+    - Space+X
+    - Space+C
+    - Space+V
 
