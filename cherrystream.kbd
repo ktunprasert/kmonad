@@ -42,7 +42,7 @@
 (defalias
   stog  (tap-next-release spc @mod_prog)
   tut   (tap-next-release tab @mod_util)
-  cutil (tap-next-release ret lctl)
+  cutil (tap-hold-next-release 500 ret lctl)
   dalt  (tap-next-release del lalt)
 )
 
