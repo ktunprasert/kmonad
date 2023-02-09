@@ -1,0 +1,16 @@
+[Unit]
+Description=KMonad for Womier Wireless/BT Keyboard
+StartLimitIntervalSec=1 min
+StartLimitBurst=3
+
+[Service]
+ExecStart=/usr/bin/kmonad /home/kris/.config/kmonad/%i.kbd
+Restart=always
+RestartSec=5
+StandardOutput=null
+
+[Path]
+PathExists=/dev/%i
+
+[Install]
+WantedBy=multi-user.target
