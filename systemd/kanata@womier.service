@@ -1,0 +1,16 @@
+[Unit]
+Description=Kanata for Womier Wireless/BT Keyboard
+StartLimitIntervalSec=1 min
+StartLimitBurst=3
+
+[Service]
+ExecStart=/usr/bin/kanata -c /home/kris/.config/kmonad/kanata/%i.kbd
+Restart=always
+RestartSec=5
+StandardOutput=null
+
+[Path]
+PathExists=/dev/%i
+
+[Install]
+WantedBy=multi-user.target
