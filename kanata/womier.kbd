@@ -1,0 +1,115 @@
+#| --------------------------------------------------------------------------
+ | (deflayer name
+ |
+ |                                                                     _
+ |  _   _    _    _    _    _    _    _    _    _    _    _    _       _  _  _
+ |  _   _    _    _    _    _    _    _    _    _    _    _    _       _     _
+ |  _   _    _    _    _    _    _    _    _    _    _    _    _       _     _
+ |  _   _    _    _    _    _    _    _    _    _    _    _            _     _
+ |  _   _    _    _    _    _    _    _    _    _    _                 _  _  _
+ |  _   _    _              _              _    _    _                 _  _  _
+ | )
+ | esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12 home ins  del
+ | grv  1    2    3    4    5    6    7    8    9    0    -     =        bspc
+ | tab  q    w    e    r    t    y    u    i    o    p    [     ]        ret
+ | caps a    s    d    f    g    h    j    k    l    ;    '     `        ret
+ | lsft \    z    x    c    v    b    n    m    ,    .    /              rsft
+ |      lctl lmet lalt           spc            ralt prnt rctl      pgup up   pgdn
+ |                                                                  lft down rght
+ -------------------------------------------------------------------------- |#
+
+(defcfg
+  linux-dev /dev/input/by-id/usb-CX_2.4G_Wireless_Receiver-event-kbd
+)
+
+(defalias
+  s_und S-min
+
+  ca C-a
+  cz C-z
+  cx C-x
+  cc C-c
+  cv C-v
+
+  q S-'
+
+  atb A-tab
+)
+
+(defalias
+  1 S-1
+  2 S-2
+  3 S-3
+  4 S-4
+  5 S-5
+  6 S-6
+  7 S-7
+  8 S-8
+  9 S-9
+  0 S-0
+  = S-=
+
+  , S-, 
+  . S-.
+  ; S-;
+
+  [ S-[
+  ] S-]
+
+  / S-/
+
+  grv S-grv
+)
+
+(defalias ;; layers
+  mod_prog (layer-toggle program)
+  mod_util (layer-toggle util)
+)
+
+(defalias
+  stog  (tap-hold-release 75 100 spc @mod_prog)
+  tut   (tap-hold-release 200 200 tab @mod_util)
+  cutil (tap-hold-release 200 200 ret lctl)
+  dalt  (tap-hold-release 200 200 del lalt)
+)
+
+
+(defsrc
+                                                                                  end
+  esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12         prnt  ins  pause
+  grv   1    2    3    4    5    6    7    8    9    0    -     =           bspc       home
+  tab   q    w    e    r    t    y    u    i    o    p    [     ]           \          del
+  caps  a    s    d    f    g    h    j    k    l    ;    '                 ret        pgup
+  lsft  z    x    c    v    b    n    m    ,    .    /                      rsft up    pgdn
+  lctl  lmet lalt               spc        ralt cmp  rctl                   lft down  rght
+)
+
+(deflayer qwerty
+                                                                                      end
+  esc     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10     f11   f12         prnt  ins  pause
+  grv     1    2    3    4    5    6    7    8    9    0       -     =           bspc      home
+  @tut    q    w    e    r    t    y    u    i    o    p       [     ]           \         del
+  @cutil  a    s    d    f    g    h    j    k    l    ;       '                 ret       pgup
+  lsft    z    x    c    v    b    n    m    ,    .    /                         bspc up   pgdn
+  lctl    lmet lalt            @stog        @dalt cmp  rctl                      lft down rght
+)
+
+(deflayer program
+                                                                                       _
+  _       _    _    _    _    _    _    _    _    _    _       _       _          _    _    _
+  @atb    @1   @2   @3   @4   @5   @6   @7   @8   @9   @0      @s_und  @=         _         _
+  _       _    _    _    _    _    _    [    ]    @,   @.      {       }          @grv      _
+  _       @ca  _    _    _    _    _    @9   @0   _    @;      @q                 _         _
+  _       _    @cz  @cx  @cc  @cv  _    @[   @]   _    @/                         _    _    _
+  _       _    _              _              _    _    _                          _    _    _
+)
+
+(deflayer util
+                                                                                       _
+  _       _    _    _    _    _    _    _    _    _     _       _     _           _    _    _
+  _       _    _    _    _    _    _    _    _    _     _       _     _           _         _
+  _       _    _    _    _    _    _    _    up   _     _       _     _           _         _
+  _       _    _    _    _    _    _    lft down rght   _       _                 _         _
+  _       _    _    _    _    _    _    _    _    _     _                         _    _    _
+  _       _    _              _              _    _     _                         _    _    _
+)
